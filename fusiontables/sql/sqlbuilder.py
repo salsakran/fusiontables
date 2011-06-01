@@ -140,7 +140,6 @@ class SQL:
     Returns:
       the sql statement
     """
-    print 'blah'
     stringValues = ""
     count = 1
     cols = values.keys()

@@ -104,7 +104,7 @@ class SQL:
         updateStatement = "%s%f" % (updateStatement, values[i])
       else:
         updateStatement = "%s'%s'" % (updateStatement, 
-                                      values[i].encode('string-escape'))
+                                      values[i].encode('utf-8'))
 
       if count < len(cols): updateStatement = "%s," % (updateStatement)
       count += 1
@@ -140,6 +140,7 @@ class SQL:
     Returns:
       the sql statement
     """
+    print 'blah'
     stringValues = ""
     count = 1
     cols = values.keys()
@@ -151,7 +152,7 @@ class SQL:
         stringValues = '%s%f' % (stringValues, value)
       else:
         stringValues = "%s'%s'" % (stringValues,
-                                   value.encode('string-escape'))
+                                   value.encode('utf-8'))
       if count < len(values): stringValues = "%s," % (stringValues)
       count += 1
 
